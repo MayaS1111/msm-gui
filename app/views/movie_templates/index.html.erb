@@ -90,7 +90,12 @@
       
       <% the_director = matching_directors.at(0) %>
 
-      <%= the_director.name %>
+      <% if the_director == nil %>
+        We have no director with that id!
+      <% else %>
+        <%= the_director.name%>
+      <% end %> 
+
     </td>
 
     <td>

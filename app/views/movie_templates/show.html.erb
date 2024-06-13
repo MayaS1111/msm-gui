@@ -2,9 +2,16 @@
   Movie #<%= @the_movie.id %> details
 </h1>
 
-<a href="/movies">
-  Go back
-</a>
+<div>
+  <a href="/movies">
+    Go back
+  </a>
+</div>
+<div>  
+  <a href="/delete_movie/<%= @the_movie.id%>">
+    Delete movie
+  </a>
+</div>
 
 <hr>
 
@@ -54,7 +61,11 @@
     
     <% the_director = matching_directors.at(0) %>
 
-    <%= the_director.name%>
+    <% if the_director == nil %>
+        We have no director with that id!
+    <% else %>
+      <%= the_director.name%>
+    <% end %> 
 
     
   </dd>

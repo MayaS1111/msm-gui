@@ -40,12 +40,10 @@ class DirectorsController < ApplicationController
   
   def create
     d = Director.new
-    d.title = params.fetch("the_title")
-    d.year = params.fetch("the_year")
-    d.duration = params.fetch("the_duration")
-    d.description = params.fetch("the_description")
-    d.image = parads.fetch("the_image")
-    d.director_id = params.fetch("the_director_id")
+    d.name = params.fetch("the_name")
+    d.dob = params.fetch("the_dob")
+    d.bio = params.fetch("the_bio")
+    d.image = params.fetch("the_image")
 
     d.save
 
@@ -68,12 +66,10 @@ class DirectorsController < ApplicationController
     the_id = params.fetch("an_id")
     d = Director.where({:id => the_id}).at(0)
 
-    d.title = params.fetch("query_title")
-    d.year = params.fetch("query_year")
-    d.duration = params.fetch("query_duration")
-    d.description = params.fetch("query_description")
+    d.name = params.fetch("query_name")
+    d.dob = params.fetch("query_dob")
+    d.bio = params.fetch("query_bio")
     d.image = params.fetch("query_image")
-    d.director_id = params.fetch("query_director_id")
 
     d.save
 
